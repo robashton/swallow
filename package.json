@@ -2,7 +2,9 @@
 , "description" : "A resource manager for delivering and reading content in browser-based games, work in progress"
 , "keywords" : [ "resource manager", "resources", "games", "browser", "delivery" ]
 , "version" : "0.1.0"
-, "preferGlobal" : false
+, "dependencies": {
+    "vows" : ""
+  }
 , "homepage" : "http://github.com/robashton/swallow"
 , "author" : "Rob Ashton <robashton@codeofrob.com> (http://codeofrob.com)"
 , "repository" :

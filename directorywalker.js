@@ -78,6 +78,7 @@ DirectoryWalker.prototype.run = function() {
     return self.emit('error', err);
   };
 
+  console.log(directory);
   fs.readdir(directory, onDirectoryRead);
 };
 
