@@ -41,7 +41,8 @@ swallow -i ./assets
 
 A file (assets.json) will be generated containing all the data in the specified directory.
 
-The above is complete, coming is
+Roadmap
+-----
 
 - Dependencies between assets
 - per-level/world-area/ asset file generation (taking into account the dependencies)
