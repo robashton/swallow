@@ -7,6 +7,7 @@ Swallow is an asset packager for facilliating the loading process in browser bas
 - You want to know when they're all loaded so the game can start
 - You don't want to load most things on demand, but working out what you need is a bit of a bother
 - You want to package all of those assets into single deployable files as JSON and load them out the other side without changing too much code
+- You want to be able to create a package which can be played offline
 
 How
 ----

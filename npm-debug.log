@@ -1,0 +1,648 @@
+info it worked if it ends with ok
+verbose cli [ 'node', '/usr/local/bin/npm', 'publish' ]
+info using npm@1.0.26
+info using node@v0.5.0
+verbose config file /home/RobAshton/.npmrc
+verbose config file /usr/local/etc/npmrc
+verbose publish [ '.' ]
+verbose cache add [ '.', undefined ]
+silly cache add: name, spec, args [ undefined, '.', [ '.', null ] ]
+verbose parsed url { pathname: '.', href: '.' }
+silly testEngine { name: 'Swallow',
+silly testEngine   description: 'A resource manager for delivering and reading content in browser-based games, work in progress',
+silly testEngine   keywords: 
+silly testEngine    [ 'resource manager',
+silly testEngine      'resources',
+silly testEngine      'games',
+silly testEngine      'browser',
+silly testEngine      'delivery' ],
+silly testEngine   version: '0.1.0',
+silly testEngine   preferGlobal: false,
+silly testEngine   homepage: 'http://github.com/robashton/swallow',
+silly testEngine   author: 
+silly testEngine    { name: 'Rob Ashton',
+silly testEngine      email: 'robashton@codeofrob.com',
+silly testEngine      url: 'http://codeofrob.com' },
+silly testEngine   repository: 
+silly testEngine    { type: 'git',
+silly testEngine      url: 'git://github.com/robashton/swallow.git' },
+silly testEngine   bugs: 
+silly testEngine    { email: 'swallow@codeofrob.com',
+silly testEngine      url: 'http://github.com/robashton/swallow/issues' },
+silly testEngine   main: './swallow-build.js',
+silly testEngine   bin: { swallow: './swallow-build.js' },
+silly testEngine   licenses: 
+silly testEngine    [ { type: 'MIT +no-false-attribs',
+silly testEngine        url: 'http://github.com/robashton/swallow/raw/master/LICENSE' } ],
+silly testEngine   _npmJsonOpts: 
+silly testEngine    { file: 'package.json',
+silly testEngine      wscript: false,
+silly testEngine      serverjs: false,
+silly testEngine      contributors: false },
+silly testEngine   _id: 'Swallow@0.1.0',
+silly testEngine   dependencies: {},
+silly testEngine   devDependencies: {},
+silly testEngine   engines: { node: '*' },
+silly testEngine   _engineSupported: true,
+silly testEngine   _npmVersion: '1.0.26',
+silly testEngine   _nodeVersion: 'v0.5.0',
+silly testEngine   _defaultsLoaded: true,
+silly testEngine   path: '/cygdrive/c/Stuff/Code/if_web/research/packaging' }
+verbose caching package.json
+verbose loadDefaults Swallow@0.1.0
+verbose pack /cygdrive/c/Stuff/Code/if_web/research/packaging /tmp/npm-1323955247031/1323955247031-0.3353978532832116/tmp.tgz
+verbose mkdir (expected) error ENOENT, No such file or directory '/tmp/npm-1323955247031'
+verbose mkdir (expected) error ENOENT, No such file or directory '/tmp/npm-1323955247031/1323955247031-0.3353978532832116'
+verbose mkdir done: /tmp/npm-1323955247031/1323955247031-0.3353978532832116 755
+verbose mkdir'ed /tmp/npm-1323955247031/1323955247031-0.3353978532832116
+verbose tar about to write tar and gzip it.
+silly tar args [ '-cvf',
+silly tar args   '-',
+silly tar args   'packaging/package.json',
+silly tar args   'packaging/LICENSE',
+silly tar args   'packaging/.gitignore',
+silly tar args   'packaging/config.js',
+silly tar args   'packaging/directorywalker.js',
+silly tar args   'packaging/swallow-build.js',
+silly tar args   'packaging/processor.js',
+silly tar args   'packaging/README.md',
+silly tar args   'packaging/test/in/config.json',
+silly tar args   'packaging/test/in/assets/sounds/pigeon.wav',
+silly tar args   'packaging/test/in/assets/sounds/star.wav',
+silly tar args   'packaging/test/in/assets/models/hovercraft.js',
+silly tar args   'packaging/test/in/assets/shaders/colour.fragment',
+silly tar args   'packaging/test/in/assets/shaders/colour.shader',
+silly tar args   'packaging/test/in/assets/shaders/default.fragment',
+silly tar args   'packaging/test/in/assets/shaders/landscape.fragment',
+silly tar args   'packaging/test/in/assets/shaders/particles.fragment',
+silly tar args   'packaging/test/in/assets/shaders/default.shader',
+silly tar args   'packaging/test/in/assets/shaders/specular.fragment',
+silly tar args   'packaging/test/in/assets/shaders/particles.shader',
+silly tar args   'packaging/test/in/assets/shaders/specular.shader',
+silly tar args   'packaging/test/in/assets/shaders/texture.fragment',
+silly tar args   'packaging/test/in/assets/shaders/texture.shader',
+silly tar args   'packaging/test/in/assets/shaders/landscape.shader',
+silly tar args   'packaging/test/in/assets/textures/cloud.png',
+silly tar args   'packaging/test/in/assets/textures/cartoonterrain.jpg',
+silly tar args   'packaging/test/in/assets/textures/grass.jpg',
+silly tar args   'packaging/test/in/assets/textures/bars.jpg',
+silly tar args   'packaging/test/in/assets/textures/gridlow.jpg',
+silly tar args   'packaging/test/in/assets/textures/gridhigh.jpg',
+silly tar args   'packaging/test/in/assets/textures/Hovercraft.jpg',
+silly tar args   'packaging/test/in/assets/textures/pigeon-particle.png',
+silly tar args   'packaging/test/in/assets/textures/pigeon.png',
+silly tar args   'packaging/test/in/assets/textures/plane.png',
+silly tar args   'packaging/test/in/assets/textures/star-particle.png',
+silly tar args   'packaging/test/in/assets/textures/particle.png',
+silly tar args   'packaging/test/in/assets/textures/star.png',
+silly tar args   'packaging/test/in/assets/textures/tree.png',
+silly tar args   'packaging/test/in/assets/textures/grassdetail.jpg',
+silly tar args   'packaging/test/in/assets/textures/testbump.jpg' ]
+verbose success gzip "--stdout"
+verbose success tar -cvf - <file list elided>
+verbose mkdir (expected) error ENOENT, No such file or directory '/tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents'
+verbose mkdir (expected) error ENOENT, No such file or directory '/tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm'
+verbose mkdir done: /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm 755
+verbose unpack_ uid, gid [ undefined, undefined ]
+verbose unpackTarget /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/package
+silly gunzTarPerm modes [ '755', '644' ]
+verbose success gzip "--decompress" "--stdout" "/tmp/npm-1323955247031/1323955247031-0.3353978532832116/tmp.tgz"
+verbose success tar "-mvxpf" "-" "-o" "-C" "/tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm"
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/.gitignore
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/config.js
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/directorywalker.js
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/package.json
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/swallow-build.js
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/README.md
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/processor.js
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/LICENSE
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/config.json
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/sounds/
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/sounds/pigeon.wav
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/sounds/star.wav
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/models/
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/models/hovercraft.js
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/textures/
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/textures/bars.jpg
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/textures/cloud.png
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/textures/grass.jpg
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/textures/grassdetail.jpg
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/textures/cartoonterrain.jpg
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/textures/gridhigh.jpg
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/textures/gridlow.jpg
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/textures/particle.png
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/textures/pigeon.png
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/textures/plane.png
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/textures/Hovercraft.jpg
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/textures/pigeon-particle.png
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/textures/star.png
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/textures/testbump.jpg
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/textures/tree.png
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/textures/star-particle.png
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/shaders/
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/shaders/colour.fragment
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/shaders/colour.shader
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/shaders/default.shader
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/shaders/landscape.fragment
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/shaders/landscape.shader
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/shaders/default.fragment
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/shaders/particles.fragment
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/shaders/specular.fragment
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/shaders/specular.shader
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/shaders/texture.fragment
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/shaders/particles.shader
+silly asyncMap in gTP /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging/test/in/assets/shaders/texture.shader
+silly chmod .gitignore 744
+silly chmod directorywalker.js 744
+silly chmod README.md 744
+silly chmod LICENSE 744
+silly chmod config.js 744
+silly chmod processor.js 744
+silly chmod swallow-build.js 744
+silly chmod package.json 744
+silly chmod star.wav 744
+silly chmod hovercraft.js 744
+silly chmod pigeon.wav 744
+silly chmod config.json 744
+silly chmod grass.jpg 744
+silly chmod cloud.png 744
+silly chmod gridhigh.jpg 744
+silly chmod gridlow.jpg 744
+silly chmod bars.jpg 744
+silly chmod cartoonterrain.jpg 744
+silly chmod grassdetail.jpg 744
+silly chmod Hovercraft.jpg 744
+silly chmod pigeon.png 744
+silly chmod plane.png 744
+silly chmod testbump.jpg 744
+silly chmod pigeon-particle.png 744
+silly chmod star.png 744
+silly chmod tree.png 744
+silly chmod particle.png 744
+silly chmod colour.fragment 744
+silly chmod colour.shader 744
+silly chmod default.shader 744
+silly chmod landscape.shader 744
+silly chmod star-particle.png 744
+silly chmod particles.fragment 744
+silly chmod default.fragment 744
+silly chmod texture.fragment 744
+silly chmod specular.fragment 744
+silly chmod particles.shader 744
+silly chmod specular.shader 744
+silly chmod texture.shader 744
+silly chmod landscape.fragment 744
+verbose gunzed /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging
+verbose rm'ed /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/package
+verbose renamed [ '/tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/___package.npm/packaging',
+verbose renamed   '/tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/package' ]
+silly testEngine { name: 'Swallow',
+silly testEngine   description: 'A resource manager for delivering and reading content in browser-based games, work in progress',
+silly testEngine   keywords: 
+silly testEngine    [ 'resource manager',
+silly testEngine      'resources',
+silly testEngine      'games',
+silly testEngine      'browser',
+silly testEngine      'delivery' ],
+silly testEngine   version: '0.1.0',
+silly testEngine   preferGlobal: false,
+silly testEngine   homepage: 'http://github.com/robashton/swallow',
+silly testEngine   author: 
+silly testEngine    { name: 'Rob Ashton',
+silly testEngine      email: 'robashton@codeofrob.com',
+silly testEngine      url: 'http://codeofrob.com' },
+silly testEngine   repository: 
+silly testEngine    { type: 'git',
+silly testEngine      url: 'git://github.com/robashton/swallow.git' },
+silly testEngine   bugs: 
+silly testEngine    { email: 'swallow@codeofrob.com',
+silly testEngine      url: 'http://github.com/robashton/swallow/issues' },
+silly testEngine   main: './swallow-build.js',
+silly testEngine   bin: { swallow: './swallow-build.js' },
+silly testEngine   licenses: 
+silly testEngine    [ { type: 'MIT +no-false-attribs',
+silly testEngine        url: 'http://github.com/robashton/swallow/raw/master/LICENSE' } ],
+silly testEngine   _npmJsonOpts: 
+silly testEngine    { file: '/tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/package/package.json',
+silly testEngine      serverjs: false,
+silly testEngine      wscript: false,
+silly testEngine      contributors: false },
+silly testEngine   _id: 'Swallow@0.1.0',
+silly testEngine   dependencies: {},
+silly testEngine   devDependencies: {},
+silly testEngine   engines: { node: '*' },
+silly testEngine   _engineSupported: true,
+silly testEngine   _npmVersion: '1.0.26',
+silly testEngine   _nodeVersion: 'v0.5.0',
+silly testEngine   _defaultsLoaded: true,
+silly testEngine   path: '/tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/package' }
+verbose caching /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/package/package.json
+verbose loadDefaults Swallow@0.1.0
+verbose tarball contents [ 'package' ]
+verbose from cache /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/package/package.json
+verbose pack /tmp/npm-1323955247031/1323955247031-0.3353978532832116/contents/package /home/RobAshton/.npm/Swallow/0.1.0/package.tgz
+verbose mkdir (expected) error ENOENT, No such file or directory '/home/RobAshton/.npm/Swallow'
+verbose mkdir (expected) error ENOENT, No such file or directory '/home/RobAshton/.npm/Swallow/0.1.0'
+verbose mkdir done: /home/RobAshton/.npm/Swallow/0.1.0 755
+verbose mkdir'ed /home/RobAshton/.npm/Swallow/0.1.0
+verbose tar about to write tar and gzip it.
+silly tar args [ '-cvf',
+silly tar args   '-',
+silly tar args   'package/directorywalker.js',
+silly tar args   'package/config.js',
+silly tar args   'package/LICENSE',
+silly tar args   'package/.gitignore',
+silly tar args   'package/package.json',
+silly tar args   'package/processor.js',
+silly tar args   'package/swallow-build.js',
+silly tar args   'package/README.md',
+silly tar args   'package/test/in/config.json',
+silly tar args   'package/test/in/assets/models/hovercraft.js',
+silly tar args   'package/test/in/assets/shaders/default.shader',
+silly tar args   'package/test/in/assets/shaders/default.fragment',
+silly tar args   'package/test/in/assets/shaders/colour.fragment',
+silly tar args   'package/test/in/assets/shaders/landscape.fragment',
+silly tar args   'package/test/in/assets/shaders/particles.fragment',
+silly tar args   'package/test/in/assets/shaders/landscape.shader',
+silly tar args   'package/test/in/assets/shaders/colour.shader',
+silly tar args   'package/test/in/assets/shaders/specular.shader',
+silly tar args   'package/test/in/assets/shaders/texture.fragment',
+silly tar args   'package/test/in/assets/shaders/texture.shader',
+silly tar args   'package/test/in/assets/shaders/specular.fragment',
+silly tar args   'package/test/in/assets/shaders/particles.shader',
+silly tar args   'package/test/in/assets/sounds/star.wav',
+silly tar args   'package/test/in/assets/sounds/pigeon.wav',
+silly tar args   'package/test/in/assets/textures/bars.jpg',
+silly tar args   'package/test/in/assets/textures/cloud.png',
+silly tar args   'package/test/in/assets/textures/grass.jpg',
+silly tar args   'package/test/in/assets/textures/cartoonterrain.jpg',
+silly tar args   'package/test/in/assets/textures/gridhigh.jpg',
+silly tar args   'package/test/in/assets/textures/grassdetail.jpg',
+silly tar args   'package/test/in/assets/textures/gridlow.jpg',
+silly tar args   'package/test/in/assets/textures/particle.png',
+silly tar args   'package/test/in/assets/textures/Hovercraft.jpg',
+silly tar args   'package/test/in/assets/textures/plane.png',
+silly tar args   'package/test/in/assets/textures/pigeon-particle.png',
+silly tar args   'package/test/in/assets/textures/star-particle.png',
+silly tar args   'package/test/in/assets/textures/testbump.jpg',
+silly tar args   'package/test/in/assets/textures/star.png',
+silly tar args   'package/test/in/assets/textures/tree.png',
+silly tar args   'package/test/in/assets/textures/pigeon.png' ]
+verbose success gzip "--stdout"
+verbose success tar -cvf - <file list elided>
+verbose mkdir (expected) error ENOENT, No such file or directory '/home/RobAshton/.npm/Swallow/0.1.0/___package.npm'
+verbose mkdir done: /home/RobAshton/.npm/Swallow/0.1.0/___package.npm 755
+verbose unpack_ uid, gid [ undefined, undefined ]
+verbose unpackTarget /home/RobAshton/.npm/Swallow/0.1.0/package
+silly gunzTarPerm modes [ '755', '644' ]
+verbose success gzip "--decompress" "--stdout" "/home/RobAshton/.npm/Swallow/0.1.0/package.tgz"
+verbose success tar "-mvxpf" "-" "-o" "-C" "/home/RobAshton/.npm/Swallow/0.1.0/___package.npm"
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/.gitignore
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/config.js
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/directorywalker.js
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/package.json
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/README.md
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/processor.js
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/swallow-build.js
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/LICENSE
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/config.json
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/sounds/
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/sounds/star.wav
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/sounds/pigeon.wav
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/models/
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/models/hovercraft.js
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/shaders/
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/shaders/colour.fragment
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/shaders/default.fragment
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/shaders/colour.shader
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/shaders/default.shader
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/shaders/landscape.fragment
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/shaders/particles.fragment
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/shaders/landscape.shader
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/shaders/particles.shader
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/shaders/specular.fragment
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/shaders/texture.fragment
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/shaders/specular.shader
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/shaders/texture.shader
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/textures/
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/textures/bars.jpg
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/textures/cartoonterrain.jpg
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/textures/grass.jpg
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/textures/grassdetail.jpg
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/textures/gridlow.jpg
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/textures/gridhigh.jpg
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/textures/cloud.png
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/textures/Hovercraft.jpg
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/textures/particle.png
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/textures/pigeon.png
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/textures/plane.png
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/textures/pigeon-particle.png
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/textures/star-particle.png
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/textures/star.png
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/textures/testbump.jpg
+silly asyncMap in gTP /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package/test/in/assets/textures/tree.png
+verbose gunzed /home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package
+verbose rm'ed /home/RobAshton/.npm/Swallow/0.1.0/package
+verbose renamed [ '/home/RobAshton/.npm/Swallow/0.1.0/___package.npm/package',
+verbose renamed   '/home/RobAshton/.npm/Swallow/0.1.0/package' ]
+silly testEngine { name: 'Swallow',
+silly testEngine   description: 'A resource manager for delivering and reading content in browser-based games, work in progress',
+silly testEngine   keywords: 
+silly testEngine    [ 'resource manager',
+silly testEngine      'resources',
+silly testEngine      'games',
+silly testEngine      'browser',
+silly testEngine      'delivery' ],
+silly testEngine   version: '0.1.0',
+silly testEngine   preferGlobal: false,
+silly testEngine   homepage: 'http://github.com/robashton/swallow',
+silly testEngine   author: 
+silly testEngine    { name: 'Rob Ashton',
+silly testEngine      email: 'robashton@codeofrob.com',
+silly testEngine      url: 'http://codeofrob.com' },
+silly testEngine   repository: 
+silly testEngine    { type: 'git',
+silly testEngine      url: 'git://github.com/robashton/swallow.git' },
+silly testEngine   bugs: 
+silly testEngine    { email: 'swallow@codeofrob.com',
+silly testEngine      url: 'http://github.com/robashton/swallow/issues' },
+silly testEngine   main: './swallow-build.js',
+silly testEngine   bin: { swallow: './swallow-build.js' },
+silly testEngine   licenses: 
+silly testEngine    [ { type: 'MIT +no-false-attribs',
+silly testEngine        url: 'http://github.com/robashton/swallow/raw/master/LICENSE' } ],
+silly testEngine   _npmJsonOpts: 
+silly testEngine    { file: '/home/RobAshton/.npm/Swallow/0.1.0/package/package.json',
+silly testEngine      serverjs: false,
+silly testEngine      wscript: false,
+silly testEngine      contributors: false },
+silly testEngine   _id: 'Swallow@0.1.0',
+silly testEngine   dependencies: {},
+silly testEngine   devDependencies: {},
+silly testEngine   engines: { node: '*' },
+silly testEngine   _engineSupported: true,
+silly testEngine   _npmVersion: '1.0.26',
+silly testEngine   _nodeVersion: 'v0.5.0',
+silly testEngine   _defaultsLoaded: true,
+silly testEngine   dist: 
+silly testEngine    { shasum: 'eae57e393fcba71c88bf2fbcf266b83318557f96',
+silly testEngine      tarball: 'http://registry.npmjs.org/Swallow/-/Swallow-0.1.0.tgz' },
+silly testEngine   scripts: {} }
+verbose caching /home/RobAshton/.npm/Swallow/0.1.0/package/package.json
+verbose loadDefaults Swallow@0.1.0
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 31950
+info shasum eae57e393fcba71c88bf2fbcf266b83318557f96
+info shasum /home/RobAshton/.npm/Swallow/0.1.0/package.tgz
+verbose from cache /home/RobAshton/.npm/Swallow/0.1.0/package/package.json
+verbose chmod /home/RobAshton/.npm/Swallow/0.1.0/package.tgz 644
+silly publish { name: 'Swallow',
+silly publish   description: 'A resource manager for delivering and reading content in browser-based games, work in progress',
+silly publish   keywords: 
+silly publish    [ 'resource manager',
+silly publish      'resources',
+silly publish      'games',
+silly publish      'browser',
+silly publish      'delivery' ],
+silly publish   version: '0.1.0',
+silly publish   preferGlobal: false,
+silly publish   homepage: 'http://github.com/robashton/swallow',
+silly publish   author: 
+silly publish    { name: 'Rob Ashton',
+silly publish      email: 'robashton@codeofrob.com',
+silly publish      url: 'http://codeofrob.com' },
+silly publish   repository: 
+silly publish    { type: 'git',
+silly publish      url: 'git://github.com/robashton/swallow.git' },
+silly publish   bugs: 
+silly publish    { email: 'swallow@codeofrob.com',
+silly publish      url: 'http://github.com/robashton/swallow/issues' },
+silly publish   main: './swallow-build.js',
+silly publish   bin: { swallow: './swallow-build.js' },
+silly publish   licenses: 
+silly publish    [ { type: 'MIT +no-false-attribs',
+silly publish        url: 'http://github.com/robashton/swallow/raw/master/LICENSE' } ],
+silly publish   _npmJsonOpts: 
+silly publish    { file: '/home/RobAshton/.npm/Swallow/0.1.0/package/package.json',
+silly publish      serverjs: false,
+silly publish      wscript: false,
+silly publish      contributors: false },
+silly publish   _id: 'Swallow@0.1.0',
+silly publish   dependencies: {},
+silly publish   devDependencies: {},
+silly publish   engines: { node: '*' },
+silly publish   _engineSupported: true,
+silly publish   _npmVersion: '1.0.26',
+silly publish   _nodeVersion: 'v0.5.0',
+silly publish   _defaultsLoaded: true,
+silly publish   dist: 
+silly publish    { shasum: 'eae57e393fcba71c88bf2fbcf266b83318557f96',
+silly publish      tarball: 'http://registry.npmjs.org/Swallow/-/Swallow-0.1.0.tgz' },
+silly publish   scripts: {} }
+info prepublish Swallow@0.1.0
+verbose PUT Swallow
+verbose raw, before any munging Swallow
+verbose url resolving [ 'https://registry.npmjs.org/', './Swallow' ]
+verbose url resolved https://registry.npmjs.org/Swallow
+verbose url parsed { protocol: 'https:',
+verbose url parsed   slashes: true,
+verbose url parsed   host: 'registry.npmjs.org',
+verbose url parsed   hostname: 'registry.npmjs.org',
+verbose url parsed   href: 'https://registry.npmjs.org/Swallow',
+verbose url parsed   pathname: '/Swallow' }
+silly writing json { _id: 'Swallow',
+silly writing json   name: 'Swallow',
+silly writing json   description: 'A resource manager for delivering and reading content in browser-based games, work in progress',
+silly writing json   'dist-tags': {},
+silly writing json   versions: {},
+silly writing json   maintainers: 
+silly writing json    [ { name: 'robashton',
+silly writing json        email: 'robashton@codeofrob.com' } ] }
+verbose response https://registry.npmjs.org/Swallow
+silly chunk {"ok":"created new entry"}
+verbose GET Swallow
+verbose raw, before any munging Swallow
+verbose url resolving [ 'https://registry.npmjs.org/', './Swallow' ]
+verbose url resolved https://registry.npmjs.org/Swallow
+verbose url parsed { protocol: 'https:',
+verbose url parsed   slashes: true,
+verbose url parsed   host: 'registry.npmjs.org',
+verbose url parsed   hostname: 'registry.npmjs.org',
+verbose url parsed   href: 'https://registry.npmjs.org/Swallow',
+verbose url parsed   pathname: '/Swallow' }
+verbose response https://registry.npmjs.org/Swallow
+silly chunk {"_id":"Swallow","_rev":"1-dae91bb11805c74d7c35dfe4efa8641b","name":"Swallow","description":"A resource manager for delivering and reading content in browser-based games, work in progress","dist-tags":{},"versions":{},"maintainers":[{"name":"robashton","email":"robashton@codeofrob.com"}],"time":{}}
+verbose PUT Swallow/0.1.0/-tag/latest
+verbose raw, before any munging Swallow/0.1.0/-tag/latest
+verbose url resolving [ 'https://registry.npmjs.org/',
+verbose url resolving   './Swallow/0.1.0/-tag/latest' ]
+verbose url resolved https://registry.npmjs.org/Swallow/0.1.0/-tag/latest
+verbose url parsed { protocol: 'https:',
+verbose url parsed   slashes: true,
+verbose url parsed   host: 'registry.npmjs.org',
+verbose url parsed   hostname: 'registry.npmjs.org',
+verbose url parsed   href: 'https://registry.npmjs.org/Swallow/0.1.0/-tag/latest',
+verbose url parsed   pathname: '/Swallow/0.1.0/-tag/latest' }
+silly writing json { name: 'Swallow',
+silly writing json   description: 'A resource manager for delivering and reading content in browser-based games, work in progress',
+silly writing json   keywords: 
+silly writing json    [ 'resource manager',
+silly writing json      'resources',
+silly writing json      'games',
+silly writing json      'browser',
+silly writing json      'delivery' ],
+silly writing json   version: '0.1.0',
+silly writing json   preferGlobal: false,
+silly writing json   homepage: 'http://github.com/robashton/swallow',
+silly writing json   author: 
+silly writing json    { name: 'Rob Ashton',
+silly writing json      email: 'robashton@codeofrob.com',
+silly writing json      url: 'http://codeofrob.com' },
+silly writing json   repository: 
+silly writing json    { type: 'git',
+silly writing json      url: 'git://github.com/robashton/swallow.git' },
+silly writing json   bugs: 
+silly writing json    { email: 'swallow@codeofrob.com',
+silly writing json      url: 'http://github.com/robashton/swallow/issues' },
+silly writing json   main: './swallow-build.js',
+silly writing json   bin: { swallow: './swallow-build.js' },
+silly writing json   licenses: 
+silly writing json    [ { type: 'MIT +no-false-attribs',
+silly writing json        url: 'http://github.com/robashton/swallow/raw/master/LICENSE' } ],
+silly writing json   _npmJsonOpts: 
+silly writing json    { file: '/home/RobAshton/.npm/Swallow/0.1.0/package/package.json',
+silly writing json      serverjs: false,
+silly writing json      wscript: false,
+silly writing json      contributors: false },
+silly writing json   _id: 'Swallow@0.1.0',
+silly writing json   dependencies: {},
+silly writing json   devDependencies: {},
+silly writing json   engines: { node: '*' },
+silly writing json   _engineSupported: true,
+silly writing json   _npmVersion: '1.0.26',
+silly writing json   _nodeVersion: 'v0.5.0',
+silly writing json   _defaultsLoaded: true,
+silly writing json   dist: 
+silly writing json    { shasum: 'eae57e393fcba71c88bf2fbcf266b83318557f96',
+silly writing json      tarball: 'http://registry.npmjs.org/Swallow/-/Swallow-0.1.0.tgz' },
+silly writing json   scripts: {} }
+verbose response https://registry.npmjs.org/Swallow/0.1.0/-tag/latest
+silly chunk {"error":"forbidden","reason":"_npmUser field must be object\n(You probably need to upgrade your npm version)"}
+silly chunk 
+ERR! Error sending version data
+ERR! Error: forbidden _npmUser field must be object
+ERR! (You probably need to upgrade your npm version): Swallow/0.1.0/-tag/latest
+ERR!     at IncomingMessage.responseDone (/usr/local/lib/node_modules/npm/lib/utils/npm-registry-client/request.js:205:16)
+ERR!     at IncomingMessage.emit (events.js:81:20)
+ERR!     at HTTPParser.onMessageComplete (http.js:133:23)
+ERR!     at CleartextStream.ondata (http.js:1216:22)
+ERR!     at CleartextStream._push (tls.js:331:27)
+ERR!     at SecurePair.cycle (tls.js:608:20)
+ERR!     at EncryptedStream.write (tls.js:124:13)
+ERR!     at Socket.ondata (stream.js:36:26)
+ERR!     at Socket.emit (events.js:64:17)
+ERR!     at Socket._onReadable (net_legacy.js:678:14)
+ERR! Report this *entire* log at:
+ERR!     <http://github.com/isaacs/npm/issues>
+ERR! or email it to:
+ERR!     <npm-@googlegroups.com>
+ERR! 
+ERR! System CYGWIN_NT-5.1-WOW64 1.7.9(0.237/5/3)
+ERR! command "node" "/usr/local/bin/npm" "publish"
+ERR! cwd /cygdrive/c/Stuff/Code/if_web/research/packaging
+ERR! node -v v0.5.0
+ERR! npm -v 1.0.26
+verbose exit [ 1, true ]
