@@ -1,0 +1,23 @@
+{ "name" : "Swallow"
+, "description" : "A resource manager for delivering and reading content in browser-based games, work in progress"
+, "keywords" : [ "resource manager", "resources", "games", "browser", "delivery" ]
+, "version" : "0.1"
+, "preferGlobal" : false
+, "homepage" : "http://github.com/robashton/swallow"
+, "author" : "Rob Ashton <robashton@codeofrob.com> (http://codeofrob.com)"
+, "repository" :
+  { "type" : "git"
+  , "url" : "https://github.com/robashton/swallow"
+  }
+, "bugs" :
+  { "email" : "swallow@codeofrob.com"
+  , "url" : "http://github.com/robashton/swallow/issues"
+  }
+, "main" : "./swallow-build.js"
+, "bin" : { "swallow" : "./swallow-build.js" }
+, "licenses" :
+  [ { "type" : "MIT +no-false-attribs"
+    , "url" : "http://github.com/robashton/swallow/raw/master/LICENSE"
+    }
+  ]
+}

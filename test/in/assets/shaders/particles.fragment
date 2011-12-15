@@ -1,0 +1,15 @@
+#ifdef GL_ES
+precision highp float;
+#endif
+
+varying float life;
+varying vec3 vColour;
+
+uniform sampler2D uSampler;
+uniform float time;
+
+void main(void) {
+    vec4 texColor = texture2D(uSampler, gl_PointCoord);
+    vec4 colour = vec4(vColour, life);
+    gl_FragColor = colour * texColor;
+}
