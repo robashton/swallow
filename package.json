@@ -3,7 +3,7 @@
 , "keywords" : [ "resource manager", "resources", "games", "browser", "delivery" ]
 , "version" : "0.1.0"
 , "dependencies": {
-    "vows" : ""
+    "when" : ""
   }
 , "homepage" : "http://github.com/robashton/swallow"
 , "author" : "Rob Ashton <robashton@codeofrob.com> (http://codeofrob.com)"

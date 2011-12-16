@@ -1,4 +1,4 @@
-var   when = require('../../when/when').when
+var   when = require('when').when
      ,swallowTest = require('./common').swallowTest
      ;
 
