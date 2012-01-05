@@ -13,7 +13,8 @@
 
     self.process = function(input, callback) {
        fs.readFile(input, function(err, data) {
-          return callback(data);        
+          var json = JSON.parse(new Buffer(data).toString('utf8'));
+          return callback(json);        
        });
     };
     

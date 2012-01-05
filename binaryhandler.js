@@ -16,7 +16,7 @@
 
     self.handles = function(filename) {
       var extension = path.extname(filename);
-      for(var i = 0 ; i < extensions.length; i++) {
+      for(var i = 0 ; i < extensions.length; i++) {        
         if(extensions[i] === extension) return true;
       }
       return false;
