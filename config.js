@@ -1,11 +1,17 @@
 var fs = require('fs');
 var path = require('path');
+var BinaryHandler = require('./binaryhandler');
+var JsonHandler = require('./jsonhandler');
 
 var Config = function(data) {
   var self = this;
 
   data.in = path.join(data.baseDir, data.in);
   data.out = path.join(data.baseDir, data.out);
+  var handlers = data.handlers || [
+    new BinaryHandler(),
+    new JsonHandler()  
+  ];
   
   self.forEachInput = function(callback) {
     callback(data.in, {
@@ -15,27 +21,17 @@ var Config = function(data) {
   };  
 
   self.getHandlerForFile = function(filename) {
-    var extension = path.extname(filename);
-    switch(extension) {
-      case '.jpg':
-      case '.png':
-      case '.wav':
-        return processBinaryHandler;
-      default:
-        return unknownHandler;
-    };
-  };
-
-  var processBinaryHandler = function(input, callback) {
-     fs.readFile(input, function(err, data) {
-        var translated = new Buffer(data).toString('base64');
-        return callback(translated);        
-     });
+    for(var i in data.handlers) {
+      var handler = data.handlers[i];
+      if(handler.handles(filename)) return handler.process;
+    }
+    return unknownHandler;
   };
 
   var unknownHandler = function(input, callback) {
     return callback('');
   };  
+
 };
 
 Config.LoadFrom = function(filename, callback) {
