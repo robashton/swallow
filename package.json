@@ -1,7 +1,7 @@
-{ "name" : "Swallow"
+{ "name" : "swallow"
 , "description" : "A resource manager for delivering and reading content in browser-based games, work in progress"
 , "keywords" : [ "resource manager", "resources", "games", "browser", "delivery" ]
-, "version" : "0.1.0"
+, "version" : "0.2.0"
 , "dependencies": {
     "when" : ""
   }
