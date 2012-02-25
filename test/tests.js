@@ -1,6 +1,7 @@
 var _ = require('underscore');
 var EventEmitter = require('events').EventEmitter;
 var path = require('path');
+var assert = require('assert');
 
 var swallow = (function() {
 
@@ -9,7 +10,9 @@ var swallow = (function() {
   };
   
   Package.prototype = {
-  
+    getRaw: function(path) {
+      return this.data[path] || null;
+    }
   };
   
   var DirectoryWalker = function(directory) {
@@ -99,6 +102,7 @@ var swallow = (function() {
     this.defaults = defaults;
     this.data = {};
     this.pending = 0;
+    this.completed = false;
     this.cfg.extraHandlers = this.cfg.extraHandlers || [];
   };
   
@@ -113,7 +117,7 @@ var swallow = (function() {
       });
       
       root.on('completed', function() {
-        self.writeOutput();
+        self.completed = true;
       });
             
       root.on('file', function(path) {
@@ -126,24 +130,31 @@ var swallow = (function() {
     writeOutput: function() {
       var self = this;
       var text = JSON.stringify(this.data);
+
       fs.writeFile(this.cfg.out, text, 'utf8', function(err) {
         if(err) { self.emit('error', err); return; }
         self.emit('completed');      
       });
     },
-    
+    notifyPendingDecrease: function() {
+       this.pending--;
+       if(this.pending === 0 && this.completed) {
+        
+        this.writeOutput();
+       }
+    },
     processFile: function(path) {
       var self = this;
       this.pending++;
       this.findHandlerForFile(path, function(handler) {
-        if(!handler) {
-          self.pending--;
+        if(!handler) {          
+          self.notifyPendingDecrease();
           return;
-        }
+        } 
         handler.handle(path, function(err, data) {
           if(err) { self.emit('error', err); return; }
           self.data[path] = data;
-          self.pending--;         
+          self.notifyPendingDecrease();       
         });
       });
     },
@@ -158,7 +169,7 @@ var swallow = (function() {
           if(!found && valid) {
             found = true;
             cb(handler);
-          } else if(pendingHandlers === 0) {
+          } else if(pendingHandlers === 0 && !found) {;
             cb(null);
           }
         });
@@ -219,7 +230,8 @@ var swallow = (function() {
         handlers: [
           handlers.byExtension('.json', handlers.json),
           handlers.byExtension('.png', handlers.binary),
-          handlers.byExtension('.wav', handlers.binary)     
+          handlers.byExtension('.wav', handlers.binary),
+          handlers.byExtension('.jpg', handlers.binary)
         ]
       });
       builder.on('completed', function() {
@@ -259,6 +271,35 @@ var swallowTests = {
 
 var handlers = swallow.handlers;
 
+var IntegrityChecks = {
+  Json: function(pkg, path, done) {
+    var packageJson = pkg.getRaw(path);
+    var packageString = JSON.stringify(packageJson);
+    fs.readFile(path, function(err, fileData) {
+      var fileString = JSON.stringify(JSON.parse(fileData));
+      assert(packageString, "Contents don't exist in package");
+      assert(packageString === fileString, "Contents are not equal")
+      done();
+    });
+  },
+  Binary: function(pkg, path, done) {
+    var packageString = pkg.getRaw(path);
+    fs.readFile(path, 'base64', function(err, fileString) {
+      assert(packageString, "Contents don't exist in package");
+      assert(packageString === fileString, "Contents are not equal");
+      done();
+    });
+  },
+  Text: function(pkg, path, done) {
+    var packageString = pkg.getRaw(path);
+    fs.readFile(path, 'utf8', function(err, fileString) {
+      assert(packageString, "Contents don't exist in package");
+      assert(packageString === fileString, "Contents are not equal");
+      done();
+    });
+  }
+};
+
 
 describe("Packaging a directory with default options", function() {
   var builtPackage = null;
@@ -266,7 +307,7 @@ describe("Packaging a directory with default options", function() {
   before(function(done) {
     swallowTests.packageDirectoryAndLoadPackage({
       in: './in/assets',
-      out: './out/assets.json'
+      out: './out/packing_directory_default_options.json'
     }, 
     function(err, pkg) {
       if(err) throw err;
@@ -275,22 +316,28 @@ describe("Packaging a directory with default options", function() {
     })
   });
       
-  it("should include .json files", function() {
-  
+  it("should package .json files", function(done) {
+    IntegrityChecks.Json(builtPackage, 'in/assets/models/hovercraft.json', done);
   });
   
-  it("should include .wav files", function() {
-  
+  it("should package .wav files", function(done) {
+    IntegrityChecks.Binary(builtPackage, 'in/assets/sounds/pigeon.wav', done);
   });
   
-  it("should include .png files", function() {
+  it("should package .jpg files", function(done) {
+    IntegrityChecks.Binary(builtPackage, 'in/assets/textures/bars.jpg', done);
+  });
   
+  it("should package .png files", function(done) {
+    IntegrityChecks.Binary(builtPackage, 'in/assets/textures/pigeon.png', done);
   });
 
   it("should ignore unknown files", function() {
-  
+    var rawData = builtPackage.getRaw('in/assets/shaders/colour.fragment');
+    assert(rawData === null);
   });
 });
+
 
 describe("Packaging a directory with an additional handler", function() {
   var builtPackage = null;
@@ -298,7 +345,7 @@ describe("Packaging a directory with an additional handler", function() {
   before(function(done) {
     swallowTests.packageDirectoryAndLoadPackage({
     in: './in/assets',
-    out: './out/assets.json',
+    out: './out/packing_directory_additional_handler.json',
     extraHandlers: [
       handlers.byExtension('.shader', handlers.text),
       handlers.byExtension('.fragment', handlers.text)
@@ -311,12 +358,16 @@ describe("Packaging a directory with an additional handler", function() {
     });
   });
 
-  it("should still execute default handlers", function() {
-  
+  it("should still execute default handlers", function(done) {
+    IntegrityChecks.Json(builtPackage, 'in/assets/models/hovercraft.json', function() {
+       IntegrityChecks.Binary(builtPackage, 'in/assets/textures/pigeon.png', done);    
+    });
   });
   
-  it("should execute the additional handler for appropriate files", function() {
-  
+  it("should execute the additional handler for appropriate files", function(done) {
+   IntegrityChecks.Text(builtPackage, 'in/assets/shaders/colour.fragment', function() {
+    IntegrityChecks.Text(builtPackage, 'in/assets/shaders/colour.shader', done);
+   });
   });
 
 });
