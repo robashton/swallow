@@ -98,7 +98,10 @@ var swallow = (function() {
     this.cfg = cfg;
     this.defaults = defaults;
     this.data = {};
+    this.pending = 0;
+    this.cfg.extraHandlers = this.cfg.extraHandlers || [];
   };
+  
   Builder.prototype = {  
   
     run: function() {
@@ -131,24 +134,44 @@ var swallow = (function() {
     
     processFile: function(path) {
       var self = this;
+      this.pending++;
       this.findHandlerForFile(path, function(handler) {
+        if(!handler) {
+          self.pending--;
+          return;
+        }
         handler.handle(path, function(err, data) {
           if(err) { self.emit('error', err); return; }
           self.data[path] = data;
+          self.pending--;         
         });
       });
     },
     
     findHandlerForFile: function(path, cb) {
       var found = false;
-      for(var i in this.defaults.handlers) {
-        var handler = this.defaults.handlers[i];
+      var pendingHandlers = this.defaults.handlers.length + this.cfg.extraHandlers.length;
+      
+      var investigateHandler = function(handler) {
         handler.valid(path, function(valid) {
+          pendingHandlers--;
           if(!found && valid) {
             found = true;
             cb(handler);
+          } else if(pendingHandlers === 0) {
+            cb(null);
           }
         });
+      };
+      
+      for(var i in this.defaults.handlers) {        
+        var handler = this.defaults.handlers[i];        
+        investigateHandler(handler);
+      }
+      
+      for(var i in this.cfg.extraHandlers) {
+        var handler = this.cfg.extraHandlers[i];        
+        investigateHandler(handler);
       }
     }
   };
@@ -193,11 +216,11 @@ var swallow = (function() {
   return {
     build: function(cfg, cb) {
       var builder = new Builder(cfg, {
-        handlers: {
-          "json-handler": handlers.byExtension('.json', handlers.json),
-          "png-handler": handlers.byExtension('.png', handlers.binary),
-          "wav-handler": handlers.byExtension('.wav', handlers.binary)     
-        }      
+        handlers: [
+          handlers.byExtension('.json', handlers.json),
+          handlers.byExtension('.png', handlers.binary),
+          handlers.byExtension('.wav', handlers.binary)     
+        ]
       });
       builder.on('completed', function() {
         cb();
@@ -276,10 +299,10 @@ describe("Packaging a directory with an additional handler", function() {
     swallowTests.packageDirectoryAndLoadPackage({
     in: './in/assets',
     out: './out/assets.json',
-    extraHandlers: {
-      "shader-handler": handlers.byExtension('.shader', handlers.text),
-      "fragment-handler": handlers.byExtension('.fragment', handlers.text)
-      }
+    extraHandlers: [
+      handlers.byExtension('.shader', handlers.text),
+      handlers.byExtension('.fragment', handlers.text)
+      ]
     }, 
     function(err, pkg) {
       if(err) throw err;
