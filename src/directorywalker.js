@@ -25,7 +25,12 @@ module.exports = (function(require) {
       var onDirectoryRead = function(err, children) {
         if(err)
           return self.handleError(err);
-
+          
+        if(children.length === 0) {
+          self.emit('completed');
+          return;
+        }
+        
         directoryChildren = children;
         processedCount = 0;
         self.emit('started'); 
