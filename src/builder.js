@@ -18,15 +18,20 @@ module.exports = (function(require) {
   Builder.prototype = {  
 
     run: function() {
+      var oldWd = process.cwd();
+      process.chdir(this.cfg.root || oldWd);
+
       var root = new DirectoryWalker(this.cfg.in);
       var self = this;
       
       root.on('error', function(err) {
         self.emit('error', err);
+        process.chdir(oldWd);
       });
       
       root.on('completed', function() {
         self.completed = true;
+        process.chdir(oldWd);
       });
             
       root.on('file', function(path) {
@@ -62,9 +67,6 @@ module.exports = (function(require) {
         } 
         handler.handle(path, function(err, data) {
           if(err) { self.emit('error', err); return; }
-          if(self.cfg.root) {
-            path = path.replace(self.cfg.root, '');
-          }
           self.data[path] = data;
           self.notifyPendingDecrease();       
         });

@@ -91,9 +91,9 @@ describe("Packaging a directory with a root specified", function() {
 
   before(function(done) {
     swallowTests.packageDirectoryAndLoadPackage({
-      in: './in/assets',
+      in: './assets',
       out: './out/packaging_directory_with_root_specified.json',
-      root: 'in/assets'
+      root: 'in'
     },
     function(err, pkg) {
       if(err) throw err;
@@ -103,8 +103,8 @@ describe("Packaging a directory with a root specified", function() {
   });
 
   it("Should remove the root from the path", function() {
-    var packageJson = builtPackage.getRaw('/models/hovercraft.json');
-    assert(packageJson)    
+    var packageJson = builtPackage.getRaw('assets/models/hovercraft.json');
+    assert(packageJson);    
   });
 });
 
