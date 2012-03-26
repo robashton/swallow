@@ -15,8 +15,7 @@
   { "email" : "swallow@codeofrob.com"
   , "url" : "http://github.com/robashton/swallow/issues"
   }
-, "main" : "./runner.js"
-, "bin" : { "swallow" : "./swallow-build.js" }
+, "main" : "./src/swallow.js"
 , "licenses" :
   [ { "type" : "MIT +no-false-attribs"
     , "url" : "http://github.com/robashton/swallow/raw/master/LICENSE"
