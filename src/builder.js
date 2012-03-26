@@ -62,6 +62,9 @@ module.exports = (function(require) {
         } 
         handler.handle(path, function(err, data) {
           if(err) { self.emit('error', err); return; }
+          if(self.cfg.root) {
+            path = path.replace(self.cfg.root, '');
+          }
           self.data[path] = data;
           self.notifyPendingDecrease();       
         });

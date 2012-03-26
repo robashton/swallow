@@ -23,6 +23,7 @@ var IntegrityChecks = {
     var packageJson = pkg.getRaw(path);
     var packageString = JSON.stringify(packageJson);
     fs.readFile(path, function(err, fileData) {
+      if(err) throw err;
       var fileString = JSON.stringify(JSON.parse(fileData));
       assert(packageString, "Contents don't exist in package");
       assert(packageString === fileString, "Contents are not equal")
@@ -85,6 +86,27 @@ describe("Packaging a directory with default options", function() {
   });
 });
 
+describe("Packaging a directory with a root specified", function() {
+  var builtPackage = null;
+
+  before(function(done) {
+    swallowTests.packageDirectoryAndLoadPackage({
+      in: './in/assets',
+      out: './out/packaging_directory_with_root_specified.json',
+      root: 'in/assets'
+    },
+    function(err, pkg) {
+      if(err) throw err;
+      builtPackage = pkg;
+      done();
+    });
+  });
+
+  it("Should remove the root from the path", function() {
+    var packageJson = builtPackage.getRaw('/models/hovercraft.json');
+    assert(packageJson)    
+  });
+});
 
 describe("Packaging a directory with an additional handler", function() {
   var builtPackage = null;
