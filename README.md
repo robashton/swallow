@@ -66,7 +66,7 @@ This can be downloaded and consumed in one go like thus:
 $.getJSON('/assets.json', function(data) {
   var audioData = data['assets/sound/explosion.wav'];
   var audio = new Audio();
-  audio.href = "data:image/png;base64," + audioData;
+  audio.src = "data:image/png;base64," + audioData;
   // etc
 });
 ```
