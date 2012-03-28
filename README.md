@@ -114,6 +114,7 @@ handle: function(filename, callback) {
 
 Given a filename, callback should be involved with something that is serializable into JSON, or an error if one occurs.
 
+TODO
 -----
 
 - Dependencies between assets
