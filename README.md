@@ -1,7 +1,18 @@
 Swallow
 -------
 
-Swallow is an asset packager for facilliating the loading process in browser based games, the idea being:
+**What it is**
+
+- A directory scanner which packages files into a single JSON file
+- A small part of your build chain
+
+**What it is not**
+
+- A complete end-to-end framework
+- A client-side loader
+- An elephant
+
+** Why? **
 
 - You have a large number of assets (textures, sounds, models, shaders) which are needed for the game to run
 - You want to know when they're all loaded so the game can start
@@ -107,5 +118,10 @@ Given a filename, callback should be involved with something that is serializabl
 
 - Dependencies between assets
 - per-level/world-area/ asset file generation (taking into account the dependencies)
-- client code for loading assets (already written, needs extracting from project)
-- transparent client code for loading assets from either file or server if not in file
+
+Client code
+-----
+I'll release some client code as another Github repo once I've extracted it from my game
+
+- For loading assets (already written, needs extracting from one project into another project
+- Transparent client code for loading assets from either file or server if not in fileT
