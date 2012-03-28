@@ -12,7 +12,7 @@ Swallow
 - A client-side loader
 - An elephant
 
-** Why? **
+**Why?**
 
 - You have a large number of assets (textures, sounds, models, shaders) which are needed for the game to run
 - You want to know when they're all loaded so the game can start
