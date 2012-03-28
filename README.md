@@ -52,6 +52,8 @@ And some code like so:
 
 
 ```
+var swallow = require('swallow');
+
 swallow.build({
   in: './assets',
   out: './assets.json'
